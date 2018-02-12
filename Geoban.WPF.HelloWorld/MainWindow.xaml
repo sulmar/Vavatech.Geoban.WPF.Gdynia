@@ -6,7 +6,39 @@
         xmlns:local="clr-namespace:Geoban.WPF.HelloWorld"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
-    <Grid>
+    <StackPanel>
+
+        <Label Content="{Binding}" />
         
-    </Grid>
+        <Label>
+            <Button>Hello World!</Button>
+        </Label>
+
+        
+
+        <Label>
+            <Label.Content>
+                Hello World 3!
+            </Label.Content>
+        </Label>
+
+        <Button Content="Send"
+                Foreground="White">
+
+            <Button.Background>
+                <!--<SolidColorBrush Color="Blue" />-->
+
+                <LinearGradientBrush>
+                    <GradientStop Color="Blue"  Offset="0" />
+                    <GradientStop Color="White" Offset="0.5" />
+                    <GradientStop Color="Red" Offset="1" />
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+
+
+        <Button Background="Green" Margin="10, 40">Load</Button>
+        <Button Background="Red" Margin="5, 10, 15, 20">Save</Button>
+
+    </StackPanel>
 </Window>

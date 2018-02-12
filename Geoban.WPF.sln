@@ -5,6 +5,14 @@ VisualStudioVersion = 15.0.27130.2027
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Geoban.WPF.HelloWorld", "Geoban.WPF.HelloWorld\Geoban.WPF.HelloWorld.csproj", "{F5FAB4EB-542F-43FE-9E10-4D657041145E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Geoban.WPF.Models", "Geoban.WPF.Models\Geoban.WPF.Models.csproj", "{4148828F-846A-472E-92EF-93726D7BB5A4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Geoban.WPF.WPFClient", "Geoban.WPF.WPFClient\Geoban.WPF.WPFClient.csproj", "{841E2F13-9DCB-4652-B684-C6B6537C2AF0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Geoban.WPF.IServices", "Geoban.WPF.IServices\Geoban.WPF.IServices.csproj", "{C8AC9F04-E986-4049-8A85-2AF9C65DBFF9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Geoban.WPF.MockServices", "Geoban.WPF.MockServices\Geoban.WPF.MockServices.csproj", "{8FDA745D-A903-462F-B889-3EC54AD4D905}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +23,22 @@ Global
 		{F5FAB4EB-542F-43FE-9E10-4D657041145E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F5FAB4EB-542F-43FE-9E10-4D657041145E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F5FAB4EB-542F-43FE-9E10-4D657041145E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4148828F-846A-472E-92EF-93726D7BB5A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4148828F-846A-472E-92EF-93726D7BB5A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4148828F-846A-472E-92EF-93726D7BB5A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4148828F-846A-472E-92EF-93726D7BB5A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{841E2F13-9DCB-4652-B684-C6B6537C2AF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{841E2F13-9DCB-4652-B684-C6B6537C2AF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{841E2F13-9DCB-4652-B684-C6B6537C2AF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{841E2F13-9DCB-4652-B684-C6B6537C2AF0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8AC9F04-E986-4049-8A85-2AF9C65DBFF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8AC9F04-E986-4049-8A85-2AF9C65DBFF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8AC9F04-E986-4049-8A85-2AF9C65DBFF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8AC9F04-E986-4049-8A85-2AF9C65DBFF9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8FDA745D-A903-462F-B889-3EC54AD4D905}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FDA745D-A903-462F-B889-3EC54AD4D905}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FDA745D-A903-462F-B889-3EC54AD4D905}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FDA745D-A903-462F-B889-3EC54AD4D905}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

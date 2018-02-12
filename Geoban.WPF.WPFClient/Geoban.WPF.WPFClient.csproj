@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F5FAB4EB-542F-43FE-9E10-4D657041145E}</ProjectGuid>
+    <ProjectGuid>{841E2F13-9DCB-4652-B684-C6B6537C2AF0}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Geoban.WPF.HelloWorld</RootNamespace>
-    <AssemblyName>Geoban.WPF.HelloWorld</AssemblyName>
+    <RootNamespace>Geoban.WPF.WPFClient</RootNamespace>
+    <AssemblyName>Geoban.WPF.WPFClient</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -54,71 +54,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="Binding\BindingElementView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Binding\DataBindingView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="CompositionView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="MainWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Binding\BindingElementView.xaml.cs">
-      <DependentUpon>BindingElementView.xaml</DependentUpon>
+    <Compile Include="ViewModels\BaseViewModel.cs" />
+    <Compile Include="ViewModels\ProductsViewModel.cs" />
+    <Compile Include="Views\ProductsView.xaml.cs">
+      <DependentUpon>ProductsView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Binding\DataBindingView.xaml.cs">
-      <DependentUpon>DataBindingView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="CompositionView.xaml.cs">
-      <DependentUpon>CompositionView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Converters\HeightConverter.cs" />
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
-    <Page Include="Panels\DockPanelView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Panels\GridView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Panels\StackPanelView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Panels\UniformGridView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\Person.cs" />
-    <Compile Include="Panels\DockPanelView.xaml.cs">
-      <DependentUpon>DockPanelView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Panels\GridView.xaml.cs">
-      <DependentUpon>GridView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Panels\StackPanelView.xaml.cs">
-      <DependentUpon>StackPanelView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Panels\UniformGridView.xaml.cs">
-      <DependentUpon>UniformGridView.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -143,6 +89,26 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Geoban.WPF.IServices\Geoban.WPF.IServices.csproj">
+      <Project>{c8ac9f04-e986-4049-8a85-2af9c65dbff9}</Project>
+      <Name>Geoban.WPF.IServices</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Geoban.WPF.MockServices\Geoban.WPF.MockServices.csproj">
+      <Project>{8fda745d-a903-462f-b889-3ec54ad4d905}</Project>
+      <Name>Geoban.WPF.MockServices</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Geoban.WPF.Models\Geoban.WPF.Models.csproj">
+      <Project>{4148828f-846a-472e-92ef-93726d7bb5a4}</Project>
+      <Name>Geoban.WPF.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Views\ProductsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -15,18 +15,13 @@ using System.Windows.Shapes;
 namespace Geoban.WPF.WPFClient.Views
 {
     /// <summary>
-    /// Interaction logic for ProductsView.xaml
+    /// Interaction logic for ShellView.xaml
     /// </summary>
-    public partial class ProductsView : Window
+    public partial class ShellView : Window
     {
-        public ProductsView()
+        public ShellView()
         {
             InitializeComponent();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

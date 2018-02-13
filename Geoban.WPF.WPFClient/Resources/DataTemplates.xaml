@@ -1,0 +1,23 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:m="clr-namespace:Geoban.WPF.Models;assembly=Geoban.WPF.Models"
+                    xmlns:local="clr-namespace:Geoban.WPF.WPFClient.Resources">
+
+    <DataTemplate DataType="{x:Type m:Product}"> 
+        <StackPanel Orientation="Horizontal">
+            <Button Content="{Binding Name}" />
+            <Label Content="{Binding Price}" />
+            <CheckBox IsChecked="{Binding IsDeleted}" />
+        </StackPanel>
+    </DataTemplate>
+
+    <DataTemplate x:Key="ProductTemplate" DataType="{x:Type m:Product}">
+        <StackPanel Orientation="Horizontal">
+            <Button Content="{Binding Name}" Style="{StaticResource AddButtonStyle}" />
+            <Label Content="{Binding Price}" />
+            <CheckBox IsChecked="{Binding IsDeleted}" />
+        </StackPanel>
+    </DataTemplate>
+
+
+</ResourceDictionary>

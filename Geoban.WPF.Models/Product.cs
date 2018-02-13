@@ -8,13 +8,30 @@ namespace Geoban.WPF.Models
 {
     public class Product : Base
     {
+
         public int Id { get; set; }
 
         public string Name { get; set; }
 
         public string Color { get; set; }
+      
 
-        public decimal Price { get; set; }
+        private decimal price;
+        public decimal Price
+        {
+            get { return price; }
+            set
+            {
+                price = value;
+
+                // OnPropertyChanged();
+
+                OnPropertyChanged(() => Price);
+                
+                // C# 6.0
+                //OnPropertyChanged(nameof(Price));
+            }
+        }
 
         public bool IsDeleted { get; set; }
 

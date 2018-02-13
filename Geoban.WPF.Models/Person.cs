@@ -6,13 +6,38 @@ using System.Threading.Tasks;
 
 namespace Geoban.WPF.Models
 {
+
     public class Person : Base
     {
         public int Id { get; set; }
 
-        public string FirstName { get; set; }
+        private string firstName;
+        public string FirstName
+        {
+            get
+            {
+                return firstName;
+            }
 
-        public string LastName { get; set; }
+            set
+            {
+                firstName = value;
+                OnPropertyChanged();
+                OnPropertyChanged(()=>FullName);
+            }
+        }
+
+        private string lastName;
+        public string LastName
+        {
+            get { return lastName; }
+            set
+            {
+                lastName = value;
+                OnPropertyChanged();
+                OnPropertyChanged(() => FullName);
+            }
+        }
 
         public string FullName
         {

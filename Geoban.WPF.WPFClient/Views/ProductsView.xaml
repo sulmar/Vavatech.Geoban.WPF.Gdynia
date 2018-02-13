@@ -4,22 +4,107 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Geoban.WPF.WPFClient.Views"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
         xmlns:vm="clr-namespace:Geoban.WPF.WPFClient.ViewModels"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:b="clr-namespace:Geoban.WPF.WPFClient.Behaviors"
         mc:Ignorable="d"
-        Title="ProductsView" Height="300" Width="300">
+        Title="ProductsView" Height="300" Width="500">
 
     <Window.DataContext>
         <vm:ProductsViewModel />
     </Window.DataContext>
-    
+
+    <Window.Resources>
+
+
+
+        <sys:Double x:Key="MyButtonWidth">150</sys:Double>
+     
+
+
+    </Window.Resources>
+   
     <Grid>
 
-        
-        <!-- ItemsControl -->
-        
-        <ListBox ItemsSource="{Binding Path=Products}"
-                 >
-        </ListBox>
+
+        <DockPanel>
+
+
+            <StackPanel Orientation="Horizontal"
+                        DockPanel.Dock="Top">
+
+                <Button x:Name="button" 
+                        Content="Dodaj" 
+                        Click="Button_Click"
+                        Style="{StaticResource AddButtonStyle}"
+                        
+                         >
+                   
+                </Button>
+                <Button Content="Calculate" 
+                        Command="{Binding CalculateCommand}" />
+
+                <!--<Button Content="Usuń" 
+                        Background="{StaticResource MyBackgroundBrush}" 
+                        Foreground="{StaticResource MyForegroundBrush}"
+                        Width="{StaticResource MyButtonWidth}"
+                        Height="50"
+                        Margin="5"
+                        />-->
+
+                <Button Command="{Binding CalculateCommand}">Hello</Button>
+              
+                <Button Content="Hello">
+                    <i:Interaction.Behaviors>
+                        <b:ButtonBehavior MyProperty="{Binding SelectedProduct.Color}" />
+                    </i:Interaction.Behaviors>
+                    
+                </Button>
+                
+                
+                <Button Content="Calculate">
+                    <i:Interaction.Behaviors>
+                        <b:EventToCommandBehavior Command="{Binding CalculateCommand}" />
+                    </i:Interaction.Behaviors>
+
+                </Button>
+
+                <Button Content="Calculate 2">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="MouseEnter">
+                            <i:InvokeCommandAction Command="{Binding CalculateCommand}" />
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </Button>
+            </StackPanel>
+
+
+            <!-- ItemsControl -->
+
+
+            <DockPanel>
+
+                <!-- Products -->
+                <ListBox 
+                    ItemsSource="{Binding Products}"
+                    ItemTemplate="{StaticResource ProductTemplate}"
+                    SelectedItem="{Binding SelectedProduct}"
+                         />
+
+                <!-- Selected product -->
+                <StackPanel>
+                    <TextBox Text="{Binding SelectedProduct.Name}" />
+                    <TextBox Text="{Binding SelectedProduct.Price}" />
+                    <CheckBox IsChecked="{Binding SelectedProduct.IsDeleted}" />
+                </StackPanel>
+
+            </DockPanel>
+
+
+
+
+        </DockPanel>
 
     </Grid>
 </Window>

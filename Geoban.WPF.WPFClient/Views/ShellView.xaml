@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Geoban.WPF.WPFClient.Views"
         xmlns:vm="clr-namespace:Geoban.WPF.WPFClient.ViewModels"
+        xmlns:v="clr-namespace:Geoban.WPF.WPFClient.Views"
         mc:Ignorable="d"
         Title="ShellView" Height="300" Width="300">
 
@@ -17,14 +18,14 @@
         <DockPanel>
             <StackPanel DockPanel.Dock="Top" 
                         Orientation="Horizontal">
-                <Button>Button 1</Button>
+                <Button Command="{Binding ShowProductCommand}">Show product</Button>
                 <Button>Button 2</Button>
                 <Button>Button 3</Button>
             </StackPanel>
 
 
-            <Border BorderThickness="5" 
-                    BorderBrush="Black" />
+            <ContentControl Content="{Binding SelectedViewModel}" />
+            
         </DockPanel>
         
     </Grid>

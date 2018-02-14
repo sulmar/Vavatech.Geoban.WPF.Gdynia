@@ -11,5 +11,15 @@ namespace Geoban.WPF.IServices
     {
         IList<Product> Get();
 
+        void Add(Product product);
+
+        Task<IList<Product>> GetAsync();
+
+        Task AddAsync(Product product);
+
+        
+
+
+
     }
 }

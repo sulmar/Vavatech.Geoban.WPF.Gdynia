@@ -77,6 +77,17 @@
                         </i:EventTrigger>
                     </i:Interaction.Triggers>
                 </Button>
+
+
+                <Button Content="Menu">
+                    <Button.ContextMenu>
+                        <ContextMenu>
+                            <MenuItem Header="Calculate" Command="{Binding CalculateCommand}"/>
+                            <MenuItem Header="Item 2" />
+                            <MenuItem Header="Item 3" /> 
+                        </ContextMenu>
+                    </Button.ContextMenu>
+                </Button>
             </StackPanel>
 
 

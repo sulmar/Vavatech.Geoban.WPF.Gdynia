@@ -7,7 +7,10 @@ using System.Threading.Tasks;
 
 namespace Geoban.WPF.WPFClient.ViewModels
 {
-    public abstract class BaseViewModel : Base
+    public class ProductViewModel : BaseViewModel
     {
+        public Product Product { get; set; }
+
+
     }
 }

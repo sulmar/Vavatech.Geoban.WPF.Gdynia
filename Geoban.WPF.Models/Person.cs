@@ -51,5 +51,11 @@ namespace Geoban.WPF.Models
 
             }
         }
+
+
+        public Address HomeAddress { get; set; }
+
+
+
     }
 }

@@ -13,29 +13,71 @@ namespace Geoban.WPF.WPFClient.ViewModels
 {
     public partial class ProductsViewModel : BaseViewModel
     {
-        public IList<Product> Products { get; set; }
+        private IList<Product> products;
+        public IList<Product> Products
+        {
+            get
+            {
+                return products;
+            }
+
+            set
+            {
+                products = value;
+
+                OnPropertyChanged();
+            }
+        }
 
         public Product SelectedProduct { get; set; }
 
         private IProductsService productsService;
 
-
         public ProductsViewModel()
+            : this(new MockProductsService())
         {
-            productsService = new MockProductsService();
+        }
 
-            Products = productsService.Get();
+        public ProductsViewModel(IProductsService productsService)
+        {
+            this.productsService = productsService;
+
+          // Products = productsService.Get();
 
            // SelectedProduct = Products.First();
         }
 
-       
+
+        private ICommand loadCommand;
+        public ICommand LoadCommand
+        {
+            get
+            {
+                if (loadCommand == null)
+                {
+                    loadCommand = new RelayCommand(p => LoadAsync());
+                }
+
+                return loadCommand;
+            }
+        }
+
+        private void Load()
+        {
+           Products = productsService.Get();
+        }
+
+        private async void LoadAsync()
+        {
+            Products = await productsService.GetAsync();
+        }
 
         public bool IsSelected
         {
             get
             {
-                return SelectedProduct != null;
+                return true;
+                // return SelectedProduct != null;
             }
         }
     }

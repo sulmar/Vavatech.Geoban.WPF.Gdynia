@@ -38,7 +38,7 @@ namespace Geoban.WPF.WPFClient.ViewModels
         {
             get
             {
-                return IsSelected && SelectedProduct.Price > 100;
+                return IsSelected;
             }
 
         }
